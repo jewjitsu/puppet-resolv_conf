@@ -5,7 +5,7 @@ describe 'resolv_conf' do
     {
       :searchpath  => 'example.com',
       :nameservers => ['192.168.0.1', '192.168.1.1', '192.168.2.1'],
-      :domainname  => 'domain.tld',
+      :domainname_real  => 'domain.tld',
     }
   end
 
@@ -13,17 +13,17 @@ describe 'resolv_conf' do
     {
       :searchpath  => 'example.com',
       :nameservers => ['192.168.0.1', '192.168.1.1', '192.168.2.1'],
-      :domainname  => 'domain.tld',
+      :domainname_real  => 'domain.tld',
     },
     {
       :searchpath  => ['example.com', 'example.de'],
       :nameservers => ['192.168.0.1', '192.168.1.1', '192.168.2.1'],
-      :domainname  => 'example.com',
+      :domainname_real  => 'example.com',
     },
     {
       :searchpath  => 'example.com',
       :nameservers => ['192.168.0.1', '192.168.1.1', '192.168.2.1'],
-      :domainname  => 'example.com',
+      :domainname_real  => 'example.com',
       :options     => ['timeout:2', 'attempts:3'],
     },
   ].each do |param_set|
@@ -68,7 +68,7 @@ describe 'resolv_conf' do
               'content'
             )
             expected_lines = [
-              "domain #{param_hash[:domainname]}",
+              "domain #{param_hash[:domainname_real]}",
             ]
 
             if(!param_hash[:searchpath].empty?)
