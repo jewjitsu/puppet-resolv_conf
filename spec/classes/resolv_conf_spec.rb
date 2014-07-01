@@ -5,7 +5,7 @@ describe 'resolv_conf' do
     {
       :searchpath  => 'example.com',
       :nameservers => ['192.168.0.1', '192.168.1.1', '192.168.2.1'],
-      :domain      => 'domain.tld',
+      :domainname  => 'domain.tld',
     }
   end
 
@@ -13,17 +13,17 @@ describe 'resolv_conf' do
     {
       :searchpath  => 'example.com',
       :nameservers => ['192.168.0.1', '192.168.1.1', '192.168.2.1'],
-      :domain      => 'domain.tld',
+      :domainname  => 'domain.tld',
     },
     {
       :searchpath  => ['example.com', 'example.de'],
       :nameservers => ['192.168.0.1', '192.168.1.1', '192.168.2.1'],
-      :domain      => 'example.com',
+      :domainname => 'example.com',
     },
     {
       :searchpath  => 'example.com',
       :nameservers => ['192.168.0.1', '192.168.1.1', '192.168.2.1'],
-      :domain      => 'example.com',
+      :domainname  => 'example.com',
       :options     => ['timeout:2', 'attempts:3'],
     },
   ].each do |param_set|
