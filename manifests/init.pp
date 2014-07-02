@@ -9,6 +9,8 @@ class resolv_conf(
     $domainname_real = $::domain
   } elsif $domainname and ! $searchpath {
     $domainname_real = $domainname
+  } elsif $domainname and $searchpath {
+    fail("domainname and searchpath are mutually exclusive paramaters")
   }
 
   file { 'resolv.conf':
