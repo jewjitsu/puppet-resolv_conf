@@ -49,18 +49,6 @@ describe 'resolv_conf' do
 
         describe "on supported osfamily: #{osfamily}" do
 
-          it { should contain_class('resolv_conf::params') }
-
-          it {
-            should contain_file('resolv.conf').with(
-              'ensure'  => 'file',
-              'path'    => '/etc/resolv.conf',
-              'owner'   => 'root',
-              'group'   => 'root',
-              'mode'    => '0644'
-            )
-          }
-
           it "should fail to compile" do
             expect {
               should compile
