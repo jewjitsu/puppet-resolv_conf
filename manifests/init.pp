@@ -5,11 +5,13 @@ class resolv_conf(
   $options = undef
 ) inherits resolv_conf::params {
 
-  if ! $domainname and ! $searchpath {
+# if ! $domainname and ! $searchpath {
+  if $domainname == undef and $searchpatch == [] {
     $domainname_real = $::domain
-  } elsif $domainname and ! $searchpath {
+#  } elsif $domainname and ! $searchpath {
+  } elsif $domainname != undef and $searchpath == [] {
     $domainname_real = $domainname
-  } elsif $domainname and $searchpath {
+  } elsif $domainname != undef and $searchpath != [] {
     fail("domainname and searchpath are mutually exclusive paramaters")
   }
 
