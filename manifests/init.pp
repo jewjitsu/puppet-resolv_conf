@@ -10,7 +10,7 @@ class resolv_conf(
   } elsif $domainname != undef and $searchpath == [] {
     $domainname_real = $domainname
   } elsif $domainname != undef and $searchpath != [] {
-    fail("domainname and searchpath are mutually exclusive paramaters")
+    fail("domainname and searchpath are mutually exclusive parameters")
   }
 
   file { 'resolv.conf':
