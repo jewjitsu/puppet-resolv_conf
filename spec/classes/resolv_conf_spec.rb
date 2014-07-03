@@ -65,7 +65,7 @@ describe 'resolv_conf' do
             expect {
               should compile
             }.to raise_error(Puppet::Error,
-                             "domainname and searchpath are mutually exclusive parameters")
+                             /domainname and searchpath are mutually exclusive parameters/)
           end
         end
       end
