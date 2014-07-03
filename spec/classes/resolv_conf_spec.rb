@@ -28,7 +28,7 @@ describe 'resolv_conf' do
       :options     => ['timeout:2', 'attempts:3'],
     },
   ].each do |param_set|
-    describe "when #{param_set == {} ? "setting searchpath and dominname" : "specifying"} class parameters" do
+    describe "when setting searchpath and dominname" : "specifying"} class parameters" do
 
       let :param_hash do
         default_params.merge(param_set)
@@ -69,7 +69,7 @@ describe 'resolv_conf' do
               'content'
             )
             expected_lines = [
-              "domain #{param_hash[:domainname_real]}",
+              "domain #{param_hash[:domainname]}",
             ]
 
             if(!param_hash[:searchpath].empty?)
@@ -116,7 +116,7 @@ describe 'resolv_conf' do
       :options     => ['timeout:2', 'attempts:3'],
     },
   ].each do |param_set|
-    describe "when #{param_set == {} ? "setting searchpath without domainname" : "specifying"} class parameters" do
+    describe "when setting searchpath without domainname" : "specifying"} class parameters" do
 
       let :param_hash do
         default_params.merge(param_set)
@@ -201,7 +201,7 @@ describe 'resolv_conf' do
       :options     => ['timeout:2', 'attempts:3'],
     },
   ].each do |param_set|
-    describe "when #{param_set == {} ? "when setting domainname without searchpath" : "specifying"} class parameters" do
+    describe "when setting domainname without searchpath" : "specifying"} class parameters" do
 
       let :param_hash do
         default_params.merge(param_set)
@@ -242,7 +242,7 @@ describe 'resolv_conf' do
               'content'
             )
             expected_lines = [
-              "domain #{param_hash[:domainname_real]}",
+              "domain #{param_hash[:domainname]}",
             ]
 
             if(!param_hash[:searchpath].empty?)
@@ -287,7 +287,7 @@ describe 'resolv_conf' do
       :options     => ['timeout:2', 'attempts:3'],
     },
   ].each do |param_set|
-    describe "when #{param_set == {} ? "when setting neither searchpath nor domainname" : "specifying"} class parameters" do
+    describe "when setting neither searchpath nor domainname" : "specifying"} class parameters" do
 
       let :param_hash do
         default_params.merge(param_set)
@@ -328,7 +328,7 @@ describe 'resolv_conf' do
               'content'
             )
             expected_lines = [
-              "domain #{param_hash[:domainname_real]}",
+              "domain #{param_hash[:domain]}",
             ]
 
             if(!param_hash[:searchpath].empty?)
