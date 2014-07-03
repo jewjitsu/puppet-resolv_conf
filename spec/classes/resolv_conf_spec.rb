@@ -28,7 +28,7 @@ describe 'resolv_conf' do
       :options     => ['timeout:2', 'attempts:3'],
     },
   ].each do |param_set|
-    describe "when setting searchpath and dominname" : "specifying"} class parameters" do
+    describe "when setting searchpath and dominname" do
 
       let :param_hash do
         default_params.merge(param_set)
@@ -116,7 +116,7 @@ describe 'resolv_conf' do
       :options     => ['timeout:2', 'attempts:3'],
     },
   ].each do |param_set|
-    describe "when setting searchpath without domainname" : "specifying"} class parameters" do
+    describe "when setting searchpath without domainname" do
 
       let :param_hash do
         default_params.merge(param_set)
@@ -201,7 +201,7 @@ describe 'resolv_conf' do
       :options     => ['timeout:2', 'attempts:3'],
     },
   ].each do |param_set|
-    describe "when setting domainname without searchpath" : "specifying"} class parameters" do
+    describe "when setting domainname without searchpath" do
 
       let :param_hash do
         default_params.merge(param_set)
@@ -287,7 +287,7 @@ describe 'resolv_conf' do
       :options     => ['timeout:2', 'attempts:3'],
     },
   ].each do |param_set|
-    describe "when setting neither searchpath nor domainname" : "specifying"} class parameters" do
+    describe "when setting neither searchpath nor domainname" do
 
       let :param_hash do
         default_params.merge(param_set)
