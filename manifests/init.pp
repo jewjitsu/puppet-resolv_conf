@@ -5,10 +5,8 @@ class resolv_conf(
   $options = undef
 ) inherits resolv_conf::params {
 
-# if ! $domainname and ! $searchpath {
-  if $domainname == undef and $searchpatch == [] {
+  if $domainname == undef and $searchpath == [] {
     $domainname_real = $::domain
-#  } elsif $domainname and ! $searchpath {
   } elsif $domainname != undef and $searchpath == [] {
     $domainname_real = $domainname
   } elsif $domainname != undef and $searchpath != [] {
