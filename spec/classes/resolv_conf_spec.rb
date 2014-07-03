@@ -184,7 +184,6 @@ describe 'resolv_conf' do
 
   let :default_params do
     {
-#      :searchpath  => 'example.com',
       :nameservers => ['192.168.0.1', '192.168.1.1', '192.168.2.1'],
       :domainname  => 'domain.tld',
     }
@@ -244,14 +243,6 @@ describe 'resolv_conf' do
             expected_lines = [
               "domain #{param_hash[:domainname]}",
             ]
-
-            if(!param_hash[:searchpath].empty?)
-              if(param_hash[:searchpath].kind_of?(Array))
-                expected_lines.push("search " + param_hash[:searchpath].join(" "))
-              else
-                expected_lines.push("search #{param_hash[:searchpath]}")
-              end
-            end
 
             param_hash[:nameservers].each do |ns|
                 expected_lines.push("nameserver #{ns}")
@@ -330,14 +321,6 @@ describe 'resolv_conf' do
             expected_lines = [
               "domain #{param_hash[:domain]}",
             ]
-
-            if(!param_hash[:searchpath].empty?)
-              if(param_hash[:searchpath].kind_of?(Array))
-                expected_lines.push("search " + param_hash[:searchpath].join(" "))
-              else
-                expected_lines.push("search #{param_hash[:searchpath]}")
-              end
-            end
 
             param_hash[:nameservers].each do |ns|
                 expected_lines.push("nameserver #{ns}")
