@@ -319,7 +319,7 @@ describe 'resolv_conf' do
               'content'
             )
             expected_lines = [
-              "domain #{param_hash[:domain]}",
+              "domain #{facts[:domain]}",
             ]
 
             param_hash[:nameservers].each do |ns|
@@ -335,5 +335,4 @@ describe 'resolv_conf' do
       end
     end
   end
-
 end
